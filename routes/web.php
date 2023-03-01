@@ -50,3 +50,10 @@ Breadcrumbs::for('profile', function ($trail) {
     $trail->parent('home');
     $trail->push('Profile', route('profile'));
 });
+
+
+Route::get('/addproject', [App\Http\Controllers\ProjectsController::class, 'index'])->name('addproject');
+Breadcrumbs::for('addproject', function ($trail) {
+    $trail->parent('projects');
+    $trail->push('Add Project', route('addproject'));
+});
