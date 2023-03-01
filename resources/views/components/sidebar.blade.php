@@ -15,29 +15,25 @@
                 </a>
             </li>
             @if (Auth::check())
-                <li id="nav-item" class="nav-item {{ Request::is('pc') ? 'active' : '' }}">
+                <li id="nav-item" class="nav-item {{ Request::is('projects') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('projects') }}">
                         <i class="bi bi-laptop"></i>
                         <span>Projects</span>
                     </a>
                 </li>
-
-                <!-- history page -->
                 <li id="nav-item-bordered" class="nav-item {{ Request::is('history') ? 'active' : '' }}">
-                    <a class="nav-link" href="{{ route('projects') }}">
+                    <a class="nav-link" href="{{ route('history') }}">
                         <i class="bi bi-clock"></i>
                         <span>History</span>
                     </a>
                 </li>
-                <!-- add link to go to the shipping details page -->
-                <li id="nav-item" class="nav-item {{ Request::is('shippingDetails') ? 'active' : '' }}">
-                    <a class="nav-link" href="{{ route('projects') }}">
+                <li id="nav-item" class="nav-item {{ Request::is('profile') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('profile') }}">
                         <i class="bi bi-person-badge"></i>
                         <span>Profile</span>
                     </a>
                 </li>
             @endif
         </ul>
-
     </nav>
 </div>
