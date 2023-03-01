@@ -135,8 +135,9 @@ a {
 }
 
 .contact {
-    width: 45vw;
+    padding: 5vh;
     margin-left: 10vw;
+    margin-bottom: 3vh;
 }
 
 .back-to-top {
@@ -210,4 +211,27 @@ a {
     filter: blur(5px);
     transition: all 1s ease-in-out;
     transform: translateX(-100%);
+}
+
+@keyframes glow {
+    $color: map-get($colors, primary);
+    $second-color: map-get($colors, secondary);
+    0% {
+        box-shadow: 0 0 10px $color, 0 0 2px $color, 0 0 3px $color, 0 0 4px $color, 0 0 50px $color, 0 0 6px $color,
+            0 0 7px $color;
+    }
+    100% {
+        box-shadow: 0 0 5px $second-color, 0 0 1px $second-color, 0 0 1px $second-color, 0 0 2px $second-color,
+            0 0 2px $second-color, 0 0 3px $second-color, 0 0 3px $second-color;
+    }
+}
+
+.anchor-container {
+    border: 5px solid transparent;
+    width: fit-content;
+}
+.active-element {
+    .contact {
+        animation: glow 1s infinite;
+    }
 }
