@@ -1,4 +1,4 @@
-<section class="about-me" id="about-me">
+<section class="about-me" id="aboutMe-carousel">
     <div id="carousel" class="carousel">
         <div id="slide-container">
             <div class="slide" data-slideIndex="0">
@@ -26,7 +26,7 @@
             <div class="slide-indicator"></div>
         </div>
     </div>
-    <div class="about-me-text">
+    <div class="about-me-text" id="aboutMe">
         <h1 class="text-primary">About Me</h1>
 
         <p class="text-neutral">
