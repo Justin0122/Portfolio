@@ -1,5 +1,7 @@
 <?php
 
+use Diglactic\Breadcrumbs\Breadcrumbs;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,5 +22,21 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Breadcrumbs::for('home', function ($trail) {
+    $trail->push('Home', route('home'));
+});
+
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin');
+
+Breadcrumbs::for('admin', function ($trail) {
+    $trail->push('Admin', route('admin'));
+});
+
+
 Route::get('/projects', [App\Http\Controllers\ProjectsController::class, 'index'])->name('projects');
+
+Breadcrumbs::for('projects', function ($trail) {
+    $trail->parent('home');
+    $trail->push('Projects', route('projects'));
+});

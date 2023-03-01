@@ -20,11 +20,17 @@
 
 <body class="bg-default">
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-dark bg-darkLaravel shadow-sm topnav">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    {{ config('Portfolio', 'Portfolio') }}
                 </a>
+                <div class="nav-item nav-breadcrumb">
+                    <!-- don't render the breadcrumbs if the user is on the login or register page -->
+                    @if (!Request::is('login') && !Request::is('register'))
+                        {{ Breadcrumbs::render() }}
+                    @endif
+                </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -36,38 +42,36 @@
                     <ul class="navbar-nav me-auto">
 
                     </ul>
-
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
                         @guest
-                            {{--                            @if (Route::has('login')) --}}
-                            {{--                                <li class="nav-item"> --}}
-                            {{--                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a> --}}
-                            {{--                                </li> --}}
-                            {{--                            @endif --}}
+                            @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                            @endif
 
-                            {{--                            @if (Route::has('register')) --}}
-                            {{--                                <li class="nav-item"> --}}
-                            {{--                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a> --}}
-                            {{--                                </li> --}}
-                            {{--                            @endif --}}
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
                         @else
-                            <li class="nav-item dropdown bg-dark">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle bg-dark text-white" href="#"
-                                    role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                                    v-pre>
+                            <li class="nav-item">
+                                <div class="nav-link">{{ __('Welcome') }} </div>
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                    data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-end bg-dark text-white"
-                                    aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item bg-dark text-white" href="{{ route('logout') }}"
+                                <div class="dropdown-menu dropdown-menu-end bg-dark" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item bg-dark hover text-white" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
@@ -75,6 +79,7 @@
                             </li>
                         @endguest
                     </ul>
+
                 </div>
             </div>
         </nav>
