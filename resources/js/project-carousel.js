@@ -1,3 +1,5 @@
+//only run this if the carousel exists
+if (document.getElementById("carousel")) {
 function autoplayCarousel() {
     const carouselEl = document.getElementById("carousel");
     const slideContainerEl = carouselEl.querySelector("#slide-container");
@@ -85,3 +87,5 @@ function autoplayCarousel() {
     );
 }
 autoplayCarousel();
+
+}
