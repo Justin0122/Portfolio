@@ -17,7 +17,7 @@
                     $nav = [
                         'Home' => '/',
                         'Contact' => '#contact',
-                        'About' => '#about-me',
+                        'About' => '#aboutMe',
                     ];
                     foreach ($nav as $key => $value) {
                         $active = request()->is($value) ? 'active' : '';
