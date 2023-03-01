@@ -1,0 +1,66 @@
+@media screen and (max-width: 600px) {
+    .img{
+        width: 46vw;
+        height: 63vw;
+    }
+
+    .about-me{
+        margin: 0 auto;
+        padding-top: 5vh;
+        width: 100vw;
+        padding: 0;
+    }
+
+    .about-me-text, .contact{
+        font-size: 1.7vh;
+        padding-top: 3vh;
+        padding-left: 10vw;
+        padding-right: 10vw;
+        position: relative;
+        left: 0;
+        margin-top: 0;
+        width: 100vw;
+    }
+
+    .contact{
+        padding-top: 10vh;
+        padding-bottom: 10vh;
+    }
+
+    .p2{
+        font-size: 3.7vh;
+    }
+    .p3{
+        font-size: 2.5vh;
+    }
+
+    .slide{
+        max-height: 50vh;
+    }
+
+    #slide-container{
+        margin-top: 30vh;
+    }
+
+    .gallery-item{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .gallery{
+        width: 100vw;
+    }
+
+    .image-text{
+        position: absolute;
+        top: 88%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+    }
+    .img-gradient::after{
+        top: 60%;
+        width: 100%;
+        height: 40%;
+    }
+}

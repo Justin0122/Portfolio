@@ -1,0 +1,33 @@
+@each $class, $color in $colors {
+    .bg-#{$class} {
+        background-color: $color !important;
+    }
+}
+
+@each $class, $color in $colors {
+    .hover-#{$class}:hover {
+        background-color: $color !important;
+    }
+    .text-hover-#{$class}:hover {
+        color: $color !important;
+    }
+}
+
+@each $class, $color in $colors {
+    .text-#{$class} {
+        color: $color !important;
+    }
+}
+
+@each $class, $color in $colors {
+    .border-#{$class} {
+        border: 1px solid $color !important;
+    }
+}
+
+@each $class, $color in $colors {
+    .btn-#{$class} {
+        background-color: $color !important;
+        border-color: $color !important;
+    }
+}
