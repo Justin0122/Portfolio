@@ -1,4 +1,4 @@
 import './bootstrap';
-import './carousel';
 import './scrolltotop';
 import './typewriter';
+import './project-carousel';
