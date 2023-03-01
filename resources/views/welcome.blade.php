@@ -59,15 +59,11 @@
                 </a>
             </div>
         </article>
-        <div class="center hidden">
-            <div id="projects">
-                @include('components.projects')
-            </div>
-        </div>
-        <div class="right hidden">
-            @include('components.about-me')
+        <div id="projects">
+            @include('components.projects')
         </div>
 
+        @include('components.about-me')
 
         @include('components.contact')
 
