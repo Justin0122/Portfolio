@@ -1,3 +1,4 @@
+if (document.getElementById("aboutMe-carousel")) {
 function autoplayCarousel() {
     const carouselEl = document.getElementById("aboutMe-carousel");
     const slideContainerEl = carouselEl.querySelector("#slide-container");
@@ -63,3 +64,5 @@ function autoplayCarousel() {
     });
 }
 autoplayCarousel();
+
+}
