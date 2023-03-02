@@ -58,3 +58,7 @@ Breadcrumbs::for('addproject', function ($trail) {
     $trail->parent('projects');
     $trail->push('Add Project', route('addproject'));
 });
+
+Route::fallback(function () {
+    abort(404);
+});

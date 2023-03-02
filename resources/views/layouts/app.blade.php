@@ -26,9 +26,10 @@
                     {{ config('Portfolio', 'Portfolio') }}
                 </a>
                 <div class="nav-item nav-breadcrumb">
-                    <!-- don't render the breadcrumbs if the user is on the login or register page -->
-                    @if (!Request::is('login') && !Request::is('register'))
-                        {{ Breadcrumbs::render() }}
+                    @if (!Request::is('login'))
+                        @if (Breadcrumbs::exists())
+                            {{ Breadcrumbs::render() }}
+                        @endif
                     @endif
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -38,23 +39,14 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
 
                     </ul>
-                    <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
-                        <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
-
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
@@ -85,7 +77,9 @@
         </nav>
 
         <main class="py-4">
-            @include('components.sidebar')
+            @if (Auth::check())
+                @include('components.sidebar')
+            @endif
             @yield('content')
         </main>
     </div>
