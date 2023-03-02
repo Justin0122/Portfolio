@@ -52,6 +52,7 @@ Breadcrumbs::for('profile', function ($trail) {
 });
 
 
+
 Route::get('/addproject', [App\Http\Controllers\ProjectsController::class, 'index'])->name('addproject');
 Breadcrumbs::for('addproject', function ($trail) {
     $trail->parent('projects');
