@@ -13,7 +13,7 @@
         <div class="project bg-primary' .
                     $folder .
                     '">
-            <span class="badge badge-primary text-dark hover-secondary bg-info">' .
+            <span class="badge badge-primary text-dark hover-secondary bg-info link">' .
                     $folder .
                     '</span>
         </div>

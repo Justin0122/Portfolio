@@ -59,13 +59,18 @@
                 </a>
             </div>
         </article>
-        <div id="projects">
-            @include('components.projects')
+        <div class="center hidden" id="projects">
+            <div id="projects">
+                @include('components.projects')
+            </div>
+        </div>
+        <div class="right hidden" id="aboutMe">
+            @include('components.about-me')
         </div>
 
-        @include('components.about-me')
-
-        @include('components.contact')
+        <div class="left anchor-container" id="contact">
+            @include('components.contact')
+        </div>
 
         <div class='back-to-top'>
             <button class='btn' id="scrollToTop">
