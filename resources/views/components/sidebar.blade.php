@@ -1,6 +1,6 @@
 <div class="sidebar" id="app">
     <div class="containerLogo logo shadow-sm" id="logo">
-        <a href="{{ url('/home') }}">
+        <a href="{{ url('/dashboard') }}">
             <img src="{{ asset('') }}" alt="logo" loading="lazy">
         </a>
     </div>
