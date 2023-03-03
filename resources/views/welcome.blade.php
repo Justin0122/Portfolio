@@ -16,8 +16,8 @@
                 @php
                     $nav = [
                         'Home' => '/',
-                        'Contact' => '#contact',
-                        'About' => '#aboutMe',
+                        'Contact' => '/#contact',
+                        'About' => '/#aboutMe',
                     ];
                     foreach ($nav as $key => $value) {
                         $active = request()->is($value) ? 'active' : '';
@@ -54,7 +54,7 @@
                 </div>
             </div>
             <div class="button fit-content">
-                <a href="#gamepc">
+                <a href="/#1_gamepc">
                     <button class="btn-primary border-secondary hover-secondary projects-button">Projects</button>
                 </a>
             </div>

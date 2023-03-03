@@ -18,8 +18,6 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index'])->name('welcome');
 
-
-
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Breadcrumbs::for('home', function ($trail) {
     $trail->push('Home', route('home'));
