@@ -4,6 +4,7 @@ use Diglactic\Breadcrumbs\Breadcrumbs;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+Auth::routes();
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,13 +16,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [App\Http\Controllers\WelcomeController::class, 'index'])->name('welcome');
 
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Breadcrumbs::for('home', function ($trail) {
     $trail->push('Home', route('home'));
 });

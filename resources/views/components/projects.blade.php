@@ -44,6 +44,7 @@
                                     $folderTitle .
                                     '</h1>
                                 </div>';
+                                //add project description
                             }
                             $image = str_replace(public_path(), '', $image);
                             echo '<img src="' . $image . '" alt="' . $image . '">';
@@ -51,6 +52,8 @@
                         }
                     }
                     echo '</div>';
+                    $description = 'test';
+                    echo '<div class="project-description" style="position:absolute;">' . $description . '</div>';
                     $index++;
                 }
             @endphp
