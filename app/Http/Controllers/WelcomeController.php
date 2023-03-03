@@ -12,9 +12,6 @@ class WelcomeController extends Controller
 
     public function index()
     {
-        if (auth()->check()) {
-            return redirect()->route('dashboard');
-        }
         $imageDirectory = 'images/projects';
         $folders = File::directories(public_path($imageDirectory));
         $imagesByFolder = [];

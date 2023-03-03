@@ -25,7 +25,7 @@
                     }
                 @endphp
                 @if (Route::has('login') && Auth::check())
-                    <li class="hover-secondary text-neutral"><a href="{{ url('/home') }}">Dashboard</a></li>
+                    <li class="hover-secondary text-neutral"><a href="{{ url('/dashboard') }}">Dashboard</a></li>
                 @else
                     <li class="hover-secondary text-neutral"><a href="{{ route('login') }}">Login</a></li>
                 @endif
