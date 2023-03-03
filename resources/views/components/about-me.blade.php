@@ -44,18 +44,10 @@
 
 
         @php
-            //make empty array
-            $skills = [];
-            $personalSkills = [];
             $studyLevels = [];
             $niveaus = [];
-            array_push($skills, 'PHP', 'Laravel', 'C++', 'C#', 'JavaScript', 'Python');
-            array_push($personalSkills, 'Teamwork', 'Creativity', 'Problem Solving');
             array_push($niveaus, 'Kader', 'MBO 3', 'MBO 4', 'HBO');
             
-            //make all arrays alphabetical
-            sort($skills);
-            sort($personalSkills);
             sort($studyLevels);
         @endphp
 
