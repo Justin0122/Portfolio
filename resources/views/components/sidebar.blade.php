@@ -6,8 +6,8 @@
     </div>
     <nav class="navbar" id="side">
         <ul class="navbar-nav flex-column">
-            <li id="nav-item-bordered" class="nav-item {{ Request::is('home') ? 'active' : '' }}">
-                <a class="nav-link" href="{{ route('home') }}">
+            <li id="nav-item-bordered" class="nav-item {{ Request::is('dashboard') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('dashboard') }}">
                     <i class="bi bi-speedometer2"></i>
                     <span class="nav-text">
                         Dashboard
