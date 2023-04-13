@@ -1,3 +1,5 @@
+//only run this if the typewriter exists
+if (document.getElementById("typewriter")) {
 let text;
 fetch('content.txt')
     .then(response => response.text())
@@ -14,3 +16,4 @@ fetch('content.txt')
         }
         typeWriter();
     });
+}

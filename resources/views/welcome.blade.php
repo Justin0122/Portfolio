@@ -9,16 +9,15 @@
     @vite (['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 
-<body class="bg-default">
-
+<body class="bg-default welcome">
     <header id="header">
         <span class="nav">
             <ul>
                 @php
                     $nav = [
                         'Home' => '/',
-                        'Contact' => '#contact',
-                        'About' => '#about-me',
+                        'Contact' => '/#contact',
+                        'About' => '/#aboutMe',
                     ];
                     foreach ($nav as $key => $value) {
                         $active = request()->is($value) ? 'active' : '';
@@ -55,37 +54,26 @@
                 </div>
             </div>
             <div class="button fit-content">
-                <a href="#image-1">
+                <a href="/#1_gamepc">
                     <button class="btn-primary border-secondary hover-secondary projects-button">Projects</button>
                 </a>
             </div>
         </article>
-        <script>
-            document.querySelector('.projects-button').addEventListener('click', function() {
-                document.querySelector('.projects').style.display = 'block';
-            });
-            window.onscroll = function() {
-                const threshold = 2200;
-                const scrollTop = document.body.scrollTop || document.documentElement.scrollTop || window.scrollY;
-                const scrolledDown = scrollTop > threshold;
-                const scrolledUp = scrollTop === 0;
-
-                if (scrolledDown || scrolledUp) {
-                    document.querySelector('.projects').style.display = 'none';
-                }
-            };
-        </script>
-
-        <div class="projects" style="display: none;">
-            @include('components.projects')
+        <div class="center hidden" id="projects">
+            <div id="projects">
+                @include('components.projects')
+            </div>
+        </div>
+        <div class="right hidden" id="aboutMe">
+            @include('components.about-me')
         </div>
 
-        @include('components.about-me')
-
-        @include('components.contact')
+        <div class="left anchor-container" id="contact">
+            @include('components.contact')
+        </div>
 
         <div class='back-to-top'>
-            <button class='btn' id="scrollToTop" onclick="topFunction()">
+            <button class='btn' id="scrollToTop">
                 <a href="#header">
                     <i class='bi-arrow-up-circle text-hover-primary text-secondary'></i>
                 </a>

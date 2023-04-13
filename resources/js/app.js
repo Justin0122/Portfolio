@@ -1,4 +1,8 @@
 import './bootstrap';
-import './carousel';
 import './scrolltotop';
 import './typewriter';
+import './anchor-element';
+import './project-carousel';
+import './aboutMe-carousel';
+import './animation-on-scroll';
+import './404';

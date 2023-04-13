@@ -1,4 +1,4 @@
-<section class="about-me" id="about-me">
+<section class="about-me" id="aboutMe-carousel">
     <div id="carousel" class="carousel">
         <div id="slide-container">
             <div class="slide" data-slideIndex="0">
@@ -26,7 +26,7 @@
             <div class="slide-indicator"></div>
         </div>
     </div>
-    <div class="about-me-text">
+    <div class="about-me-text" id="aboutMe">
         <h1 class="text-primary">About Me</h1>
 
         <p class="text-neutral">
@@ -44,18 +44,10 @@
 
 
         @php
-            //make empty array
-            $skills = [];
-            $personalSkills = [];
             $studyLevels = [];
             $niveaus = [];
-            array_push($skills, 'PHP', 'Laravel', 'C++', 'C#', 'JavaScript', 'Python');
-            array_push($personalSkills, 'Teamwork', 'Creativity', 'Problem Solving');
             array_push($niveaus, 'Kader', 'MBO 3', 'MBO 4', 'HBO');
             
-            //make all arrays alphabetical
-            sort($skills);
-            sort($personalSkills);
             sort($studyLevels);
         @endphp
 

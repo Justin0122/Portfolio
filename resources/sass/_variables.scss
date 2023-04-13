@@ -2,15 +2,16 @@
 $body-bg: #f8fafc;
 
 // Typography
-$font-family-sans-serif: 'Nunito', sans-serif;
+$font-family-sans-serif: "Nunito", sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
+$margin-components: 16vh;
 
 $colors: (
-    default: #20262E,
+    default: #20262e,
     primary: #913175,
-    secondary: #CD5888,
-    neutral: #E9E8E8,
+    secondary: #cd5888,
+    neutral: #e9e8e8,
     success: #2dce89,
     info: #11cdef,
     warning: #fb6340,

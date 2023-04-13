@@ -1,23 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card bg-primary">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+    <div class="container">
+        <div class="grid-container">
+            @php
+                $button = ['addproject', 'test', 'test', 'test', 'test', 'test', 'test', 'test', 'test'];
+            @endphp
+            @foreach ($button as $b)
+                <a href="/{{ $b }}">
 
-                <div class="card-body bg-dark text-white">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
+                    <div class="grid-item">
+                        <div class="component">
+                            <span><?php echo $b; ?></span><br>
+                            <img src="img/<?php echo $b; ?>.png" alt="" width="300">
                         </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
+                    </div>
+                </a>
+            @endforeach
         </div>
     </div>
-</div>
 @endsection

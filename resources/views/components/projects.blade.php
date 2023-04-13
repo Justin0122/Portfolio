@@ -1,32 +1,31 @@
-<div class="wrapper">
-    <nav class="lil-nav">
-        @php
-            $dir = 'images/projects';
-            $subfolders = array_filter(glob($dir . '/*'), 'is_dir');
-            $count = 1;
-            foreach ($subfolders as $subfolder) {
-            $images = glob($subfolder . '/*.{jpg,jpeg,png,gif}', GLOB_BRACE);
-            $firstImage = $images[0];
-            $subfolderName = basename($subfolder);
-            echo "<a id='image-$count' href='#$subfolderName'><img src='$firstImage' alt='$subfolderName' /></a>";
-            $count++;
-            }
-        @endphp
-    </nav>
+<div class="projects">
+    <div class="badges">
+        @foreach ($imagesByFolder as $folderName => $images)
+            <a href="/#{{ $folderName }}">
+                <div class="project bg-primary{{ $folderName }}">
+                    <span class="badge badge-primary text-dark hover-secondary bg-info link">{{ $folderName }}</span>
+                </div>
+            </a>
+        @endforeach
+    </div>
 
-    <div class="gallery">
-        @php
-            foreach ($subfolders as $subfolder) {
-            $images = glob($subfolder . '/*.{jpg,jpeg,png,gif}', GLOB_BRACE);
-            $firstImage = $images[0];
-            $subfolderName = basename($subfolder);
-            $count = 1;
-            echo "<div id='$subfolderName' class='gallery-item'>";
-            foreach ($images as $image) {
-            echo "<img class='gallery__img' src='$image' alt='$subfolderName' />";
-            }
-            echo "</div>";
-            }
-        @endphp
+    <div id="carousel" class="carousel">
+        <div id="slide-container">
+            @foreach ($imagesByFolder as $folderName => $images)
+                <div class="slide" id="slide-{{ $loop->index }}">
+                    @foreach ($images as $imageUrl)
+                        @if ($loop->first)
+                            <div class="caption anchor" style="position: absolute;" id="{{ $folderName }}">
+                                <h1>{{ $folderName }}</h1>
+                            </div>
+                        @endif
+                        <img src="{{ $imageUrl }}" alt="{{ $imageUrl }}">
+                    @endforeach
+                </div>
+            @endforeach
+        </div>
+
+        <div id="back-button" class="arrow back"></div>
+        <div id="forward-button" class="arrow forward"></div>
     </div>
 </div>
